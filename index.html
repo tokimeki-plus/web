@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <!-- tokimeki-plus head 2024.05.21 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <!-- css reset -->
+    <link rel="stylesheet" type="text/css" href="/static/css/modern-css-reset.css">
+    <script src="/static/js/load_contents.js"></script>
+    <!-- tokimeki-plus head end -->
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Tokimeki+</title>
+</head>
+
+<body ontouchstart="">
+    <div id="container">
+        <!-- /header.htmlを読み込み -->
+        <header class="load_content" data-load_file="/header.html"></header>
+
+        <main>
+            <div id="top">
+                <div style="padding: 20px 20%;">
+                    <img src="/static/img/top.png">
+                </div>
+                <div class="top_message">
+                    <h2>デジタルの力を通じて、</h2>
+                    <h2>毎日の生活に</h2>
+                    <h2>ときめきを提供する。</h2>
+                </div>
+                <div class="top_contents">
+                    <p>すべての人が毎日をワクワクと前向きな気持ちで過ごせる世界を創造します。</p>
+                    <p>明日への期待を高め、新しい可能性に気づき、人々の生活にときめきと充実感をもたらします。</p>
+                </div>
+            </div>
+
+            <div id="news">
+                <h2>NEWS</h2>
+                <script>
+                    $(document).ready(function () {
+                        // newsコンテンツを/data/news.jsonから取得して生成
+                        $.getJSON('/data/news.json', function (data) {
+                            var newsContainer = $('.news');
+                            $.each(data.data, function (index, newsItem) {
+                                var newsHtml = `
+                    <div class="news_contents">
+                        <div class="news_container">
+                            <div class="news_date">${newsItem.date}</div>
+                            <div class="news_button">v</div>
+                        </div>
+                        <div class="news_title">${newsItem.title}</div>
+                        <div class="news_content" style="display:none;">${newsItem.content}</div>
+                    </div>`;
+                                newsContainer.append(newsHtml);
+                            });
+
+                            // ボタンのクリックイベントを追加
+                            $('.news').on('click', '.news_contents', function () {
+                                var $newsContent = $(this).find('.news_content');
+                                $newsContent.slideToggle();
+
+                                // +マークと✕マークを切り替える
+                                var $button = $(this).find('.news_button');
+                                if ($button.text() === "v") {
+                                    $button.text("×");
+                                } else {
+                                    $button.text("v");
+                                }
+                            });
+                        });
+                    });
+
+                </script>
+                <div class="news">
+                    <!-- ここに/data/news.jsonの内容が生成される -->
+                    <!-- コンテンツの例
+                    <div class="news_contents">
+                        <div class="news_container">
+                            <div class="news_date">2024.04.13</div>
+                            <div class="news_button">v</div>
+                        </div>
+                        <div class="news_title">公式サイトを開設しました。</div>
+                        <div class="news_content" style="display:none;">ときめき+の公式サイトができたよ～みんな見てね～～</div>
+                    </div> 
+                -->
+
+                </div>
+            </div>
+
+            <div id="about">
+                <div style="padding: 20px 0;">
+                    <img src="/static/img/aboutus.png">
+                </div>
+                <h2>ABOUT US</h2>
+                <div class="about_contents">
+                    <p>デジタルの力を活用し、皆さんの日々の生活にちょっとした"ときめき"を贈る5人組です。</p>
+                    <p>スマートフォン向けアプリを中心に、様々なデジタル技術を活用したプロダクトを開発しています。</p>
+                </div>
+                <div class="button_container">
+                    <div class="button_box"><a href="/about" class="btn">私たちについて</a></div>
+                </div>
+            </div>
+
+            <div id="product">
+                <h2>PRODUCT</h2>
+                <img src="static/img/sorarin.png" style="padding: 20px 20%;">
+                <div class="product_name">
+                    <h4>そらりん</h4>
+                    <span>2024.06.01 Release</span>
+                </div>
+                <div class="product_summary">
+                    <p>天気予報を確認する手間が省け、</p>
+                    <p>毎日のスタートがより新鮮に。</p>
+                </div>
+                <div class="product_description">
+                    <p>そらりんは、その日の天気によってアラーム音が変わる目覚ましアプリです。</p>
+                    <p>天気と調和した心地よいアラーム音の中から、天気ごとにお好きなアラーム音を設定してください。</p>
+                </div>
+                <div class="button_container">
+                    <div class="button_box"><a href="/sorarin/" class="btn">詳細を見る</a></div>
+                </div>
+            </div>
+
+            <div id="contact">
+                <div class="contact_contents">
+                    <h2>CONTACT</h2>
+                    <div class="button-container">
+                        <div class="contact_btn_box"><a href="/contact" class="contact_btn">お問い合わせはこちらから</a></div>
+                    </div>
+                    <p>プロダクトについてなど、ときめき+に関するお問合わせは上記リンクよりお願いします。</p>
+                </div>
+            </div>
+
+        </main>
+        <footer>
+
+        </footer>
+        <!-- /footer.htmlを読み込み -->
+        <footer class="load_content" data-load_file="/footer.html"></footer>
+    </div>
+</body>
+
+</html>

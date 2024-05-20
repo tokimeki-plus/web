@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <!-- tokimeki-plus head 2024.05.21 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <!-- css reset -->
+    <link rel="stylesheet" type="text/css" href="/static/css/modern-css-reset.css">
+    <script src="/static/js/load_contents.js"></script>
+    <!-- tokimeki-plus head end -->
+    <link rel="stylesheet" href="/sorarin/static/css/style.css">
+    <title>そらりん</title>
+</head>
+
+<body ontouchstart="">
+    <div id="container">
+        <header>
+            <div id="header_title">
+                <img src="/sorarin/static/img/icon.png" alt="">
+                <div>そらりん</div>
+            </div>
+
+            <div id="header_nav">
+                <script>
+                    // チェックボックスのチェックを外す関数を定義
+                    function uncheckCheckbox() {
+                        // チェックボックスをjQueryで特定する（IDで検索）
+                        var $checkbox = $("#header_nav_input");
+                        if ($checkbox.prop("checked")) {
+                            // チェックが入っていたら外す
+                            $checkbox.prop("checked", false);
+                        }
+                    }
+                </script>
+                <input id="header_nav_input" class="header_nav_hidden" type="checkbox">
+                <label for="header_nav_input" class="header_nav_open"><span></span></label>
+                <nav class="header_nav_content">
+                    <ul class="header_nav_list">
+                        <li class="header_nav_item">
+                            <a href="#about" onclick="uncheckCheckbox()">そらりんとは？</a>
+                        </li>
+                        <hr>
+                        <li class="header_nav_item">
+                            <a href="#howto" onclick="uncheckCheckbox()">そらりんの使い方</a>
+                        </li>
+                        <hr>
+                        <li class="header_nav_item">
+                            <a href="#info" onclick="uncheckCheckbox()">FAQ・お知らせ</a>
+                        </li>
+                        <hr>
+                        <li class="header_nav_download">
+                            <p>アプリのダウンロードは<br>こちらから</p>
+                            <a href="">
+                                <img src="/sorarin/static/img/download.png" alt="">
+                            </a>
+                        </li>
+                        <hr>
+                        <li class="header_nav_contact">
+                            <p>お問い合わせは<br>こちらから</p>
+                            <a href="mailto:tokimekiplus0212@gmail.com">tokimekiplus0212@gmail.com</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div id="top">
+                <div class="top_title">
+                    <div class="top_title_item">
+                        <div class="top_title_item_inner_1">目覚ましアプリ</div>
+                        <div class="top_title_item_inner_2">「そらりん」</div>
+                        <div class="top_title_item_inner_3">
+                            <span>天気に合わせた心地良いアラームで、</span><br><span>手間なくその日の天気を確認！</span>
+                        </div>
+                    </div>
+                    <div class="top_title_item">
+                        <img src="/sorarin/static/img/iPhone.png" alt="">
+                    </div>
+                </div>
+                <div class="top_app">
+                    <div class="top_app_item">
+                        ダウンロードはこちらから
+                    </div>
+                    <div class="top_app_item">
+                        <a href="">
+                            <img src="/sorarin/static/img/download.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="top_nav">
+                    <div class="top_nav_item">
+                        <a href="#about">
+                            <img src="/sorarin/static/img/about.png" alt="">
+                        </a>
+                    </div>
+                    <div class="top_nav_item">
+                        <a href="#howto">
+                            <img src="/sorarin/static/img/howto.png" alt="">
+                        </a>
+                    </div>
+                    <div class="top_nav_item">
+                        <a href="#info">
+                            <img src="/sorarin/static/img/info.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="about" name="about">
+                <div class="about_content">
+                    <div class="about_content_title">
+                        そらりんとは？
+                    </div>
+                    <div class="about_content_item">
+                        そらりんは、その日の天気によってアラーム音が変わる目覚ましアプリです。
+                    </div>
+                    <div class="about_content_item">
+                        <img src="/sorarin/static/img/iPhone.png" alt="">
+                    </div>
+                </div>
+                <div class="about_content">
+                    <div class="about_content_title">
+                        こんな方におすすめ！
+                    </div>
+                    <div class="about_content_item">
+                        <span>☑️ </span><span class="recommend">普段天気予報をあまり見ず、家を出てから雨が降って後悔したことのある人</span>
+                    </div>
+                    <div class="about_content_item">
+                        <span>☑️ </span><span class="recommend">毎日の目覚めにちょっとした楽しみをプラスしたい人</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="howto">
+                <div class="howto_title">
+                    そらりんの使い方
+                </div>
+                <div class="howto_content">
+                    <div class="howto_content_item">
+                        <img src="/sorarin/static/img/iPhone.png" alt="">
+                    </div>
+                    <div class="howto_content_item">
+                        <div class="howto_content_title">
+                            <span class="step">ステップ１</span>
+                        </div>
+                        <div class="howto_content_caption">
+                            <span class="caption">まずは、各天気のアラーム音と天気予報を表示したい地点を設定</span>
+                        </div>
+                        <div class="howto_content_footnote">
+                            <span class="footnote">※画面右下の設定マークから設定画面に移動できます</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="howto_content">
+                    <div class="howto_content_item">
+                        <img src="/sorarin/static/img/iPhone.png" alt="">
+                    </div>
+                    <div class="howto_content_item">
+                        <div class="howto_content_title">
+                            <span class="step">ステップ２</span>
+                        </div>
+                        <div class="howto_content_caption">
+                            <span class="caption">ホーム画面でアラームを作成</span>
+                            <br>
+                            <span class="caption">アラームをタッチして、詳細設定画面で時刻・繰り返し・アラーム名・スヌーズを設定します</span>
+                        </div>
+                        <div class="howto_content_footnote">
+                            <span class="footnote">※時刻によってアラーム音を変更したい場合は、アラームの詳細設定画面から変更することができます</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="howto_content">
+                    <div class="howto_content_item">
+                        <img src="/sorarin/static/img/iPhone.png" alt="">
+                    </div>
+                    <div class="howto_content_item">
+                        <div class="howto_content_title">
+                            <span class="step">ステップ３</span>
+                        </div>
+                        <div class="howto_content_caption">
+                            <span class="caption">あとは</span>
+                            <br>
+                            <span class="caption">☑️ そらりんの通知を許可</span>
+                            <br>
+                            <span class="caption">☑️ そらりんをバックグラウンドに常駐</span>
+                            <br>
+                            <span class="caption">することでアラームを使用できます！</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="info">
+                <div class="info_content">
+                    <div class="info_content_title">
+                        FAQ・お知らせ
+                    </div>
+                    <div class="info_content_item">
+                        バージョン1.0をリリースしました！(2024/05/31)
+                    </div>
+                </div>
+                <div class="info_content">
+                    <div class="info_content_title">
+                        お問い合わせ
+                    </div>
+                    <div class="info_content_item">
+                        <a href="mailto:tokimekiplus0212@gmail.com">tokimekiplus0212@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+        <footer>
+            <div id="footer_content">
+                © 2024 Tokimeki+
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

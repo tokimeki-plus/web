@@ -1,0 +1,32 @@
+<div class="logo">
+    <a href="/"><img src="/static/img/logo.png"></a>
+</div>
+<div id="hamburger">
+    <div class="icon">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+<nav class="sm">
+    <ul>
+        <li><a href="#news">NEWS</a></li>
+        <li><a href="#about">ABOUT US</a></li>
+        <li><a href="#product">PRODUCT</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+    </ul>
+</nav>
+
+
+<!--jQuery-->
+<script>
+    $('#hamburger').on('click', function () {
+        $('.icon').toggleClass('close');
+        $('.sm').slideToggle();
+    });
+
+    $('.sm a').on('click', function () {
+        $('.icon').removeClass('close');
+        $('.sm').slideUp();
+    });
+</script>

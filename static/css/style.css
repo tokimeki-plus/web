@@ -1,0 +1,686 @@
+* {
+    box-sizing: border-box;
+    /* boxsizeにpaddingやborderを含める */
+    word-wrap: break-word;
+}
+
+/* --------------------
+tags 通常HTMLタグ
+-------------------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: bold;
+    line-height: 1.5;
+    margin-top: 0.4em;
+    margin-bottom: 0.4em;
+}
+
+p {
+    line-height: 1.5;
+    margin-top: 0.6em;
+    margin-bottom: 0.4em;
+}
+
+h1 {
+    font-size: 1.9rem;
+}
+
+h2 {
+    font-size: 1.6rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+}
+
+h4 {
+    font-size: 1.2rem;
+}
+
+h5 {
+    font-size: 1rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
+
+img:not([class]) {
+    display: block;
+    margin: 0 auto;
+    border: none;
+    max-width: 90%;
+    object-fit: cover;
+    -ms-interpolation-mode: bicubic;
+    height: auto;
+}
+
+body {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #2c2c2c;
+    background-color: #ffffff;
+    font-family: "Noto Sans JP", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    width: auto;
+    margin: 0 auto;
+    padding: 0;
+    padding-top: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    max-width: 390px;
+    /* width・max-widthによって、ある程度の幅になったら真ん中に寄る */
+    /* background-color: red; */
+    /* 背景色を付けておくとわかりやすい */
+}
+
+/* --------------------
+header
+-------------------- */
+header {
+    height: 60px;
+    width: 100%;
+    padding: 0px 15px;
+    background-color: rgba(255, 255, 255, 0.9);
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    max-width: 390px;
+    box-shadow: 0 1px 2px rgba(167, 167, 167, 0.1);
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #e0e0e0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    max-height: 40px;
+    width: auto;
+}
+
+nav {
+    margin: 0 0 0 auto;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header a {
+    color: #2c2c2c;
+    letter-spacing: 0.08rem;
+    text-decoration: none;
+    display: block;
+    line-height: 60px;
+}
+
+.sm {
+    display: none;
+}
+
+/* hamburger menu */
+#hamburger {
+    background-color: transparent;
+    position: relative;
+    cursor: pointer;
+    margin: 0 0 0 auto;
+    height: 60px;
+    width: 60px;
+}
+
+.icon span {
+    position: absolute;
+    left: 15px;
+    width: 25px;
+    height: 1.5px;
+    background-color: #2c2c2c;
+    border-radius: 8px;
+    transition: ease 0.75s;
+}
+
+.icon span:nth-of-type(1) {
+    top: 16px;
+}
+
+.icon span:nth-of-type(2) {
+    top: 28px;
+}
+
+.icon span:nth-of-type(3) {
+    bottom: 16px;
+}
+
+.close span:nth-of-type(1) {
+    transform: rotate(45deg);
+    top: 28px;
+}
+
+.close span:nth-of-type(2) {
+    opacity: 0;
+}
+
+.close span:nth-of-type(3) {
+    transform: rotate(-45deg);
+    top: 28px;
+}
+
+.sm {
+    top: 60px;
+    left: 0px;
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+ul {
+    flex-direction: column;
+}
+
+.sm a {
+    text-align: center;
+    /* border-top: solid 0.5px rgba(255, 255, 255, 0.6); */
+}
+
+/* --------------------
+main
+-------------------- */
+main {
+    background-color: #ffffff;
+}
+
+/* --------------------
+共通button
+-------------------- */
+
+.button_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #2C2C2C;
+    color: #fff;
+    border-radius: 100vh;
+    text-align: center;
+    width: 60%;
+    margin: 10% auto;
+}
+
+/* link */
+a.btn {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    padding: 8% 10%;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.15rem;
+    transition: 0.3s;
+    color: inherit;
+}
+
+/* hover */
+.button_box:hover,
+.Form-Btn:hover {
+    opacity: 0.7;
+}
+
+/* *************************************************** */
+
+/* --------------------
+index.html
+-------------------- */
+
+/* --------------------
+top
+-------------------- */
+#top {
+    min-height: 100vh;
+    padding: 80px 5% 0;
+    background-color: #FFFDE3
+}
+
+.top_message {
+    margin: 5% auto;
+}
+
+.top_message h2 {
+    display: inline-block;
+    background-color: #F7EF66;
+    padding: 5px 20px;
+    margin: 5px 0;
+    border-radius: 30px;
+    letter-spacing: 0.08rem;
+}
+
+.top_contents {
+    margin: 10% 5%;
+}
+
+#top p {
+    margin: 10px auto;
+    letter-spacing: 0.08rem;
+}
+
+/* --------------------
+news
+-------------------- */
+#news {
+    min-height: 100vh;
+    padding: 80px 5% 0;
+}
+
+#news h2 {
+    letter-spacing: 0.1rem;
+}
+
+.news {
+    margin: 10% 0;
+}
+
+.news_contents {
+    min-height: 10vh;
+    margin: 10px auto;
+    padding: 5% 10%;
+    border: #2c2c2c solid 1.5px;
+    border-radius: 10px;
+}
+
+.news_container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.news_date {
+    font-weight: bold
+}
+
+.news_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background-color: #F7EF66;
+    border-radius: 50%;
+}
+
+.news_content {
+    padding: 10% 0;
+}
+
+
+/* --------------------
+about
+-------------------- */
+#about {
+    min-height: 100vh;
+    padding: 80px 5% 0;
+    background-color: #FFFDE3
+}
+
+#about h2 {
+    margin: 20px auto;
+    letter-spacing: 0.1rem;
+}
+
+.about_contents {
+    margin: 10% auto;
+}
+
+#about p {
+    margin: 10px auto;
+    letter-spacing: 0.08rem;
+}
+
+
+/* --------------------
+product
+-------------------- */
+#product {
+    min-height: 100vh;
+    padding: 80px 5% 0;
+}
+
+#product h2 {
+    letter-spacing: 0.1rem;
+}
+
+#product img {
+    padding: 20px;
+    margin: 15% auto 8%;
+    border: 1.5px solid #2c2c2c;
+    border-radius: 10px;
+    background-color: #d6e8f5;
+}
+
+#product h4 {
+    letter-spacing: 0.08rem;
+}
+
+#product span {
+    font-size: 14px;
+}
+
+#product p {
+    margin: 10px auto;
+
+}
+
+.product_summary {
+    font-weight: bold;
+    margin: 20px auto;
+    letter-spacing: 0.05rem;
+}
+
+.product_summary p {
+    text-decoration: underline;
+}
+
+/* --------------------
+contact
+-------------------- */
+#contact {
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+
+}
+
+.contact_contents {
+    min-height: 30vh;
+    padding: 10% 7%;
+    margin: 80px 5%;
+    /* border: #F7EF66 3px solid; */
+    background-color: #F7EF66;
+    border-radius: 20px;
+}
+
+#contact h2 {
+    letter-spacing: 0.1rem;
+}
+
+.contact_btn_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    color: #2c2c2c;
+    border: 1.5px solid #2c2c2c;
+    border-radius: 100vh;
+    text-align: center;
+    width: 85%;
+    margin: 10% auto;
+}
+
+a.contact_btn {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    padding: 5% 10%;
+    transition: 1s;
+    color: inherit;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.15rem;
+}
+
+.contact_btn_box:hover {
+    color: #fff;
+    background-color: #2C2C2C;
+}
+
+.contact_btn_box:hover::after {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.1);
+    transition-delay: 0s;
+    transition: opacity .8s, transform .6s ease-in-out;
+}
+
+/* *************************************************** */
+
+/* --------------------
+about.html
+-------------------- */
+
+/* --------------------
+message
+-------------------- */
+#message {
+    padding: 80px 5% 0;
+    background-color: #FFFDE3;
+    min-height: 100vh;
+}
+
+#message h2 {
+    letter-spacing: 0.1rem;
+}
+
+/* mission */
+#mission {
+    margin-bottom: 20%;
+}
+
+/* vision */
+#vision {
+    margin-bottom: 20%;
+}
+
+.vision_content {
+    margin: auto 5%;
+}
+
+#vision p {
+    margin: 8% auto;
+    letter-spacing: 0.07rem;
+}
+
+/* value */
+#value {
+    padding-bottom: 20%;
+}
+
+.value_content {
+    margin: 5% auto;
+}
+
+.value_content h4 {
+    position: relative;
+    display: inline-block;
+    letter-spacing: 0.08rem;
+}
+
+.value_content h4::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #A8D3E2;
+    border-radius: 10px;
+}
+
+
+/* --------------------
+member
+-------------------- */
+
+#member {
+    padding: 80px 5% 0;
+}
+
+#member h2 {
+    letter-spacing: 0.1rem;
+}
+
+.member_content {
+    margin: 10% auto;
+}
+
+.member_img_name {
+    display: flex;
+    align-items: center
+}
+
+.member_img_name img {
+    margin: auto 0;
+}
+
+.member_img_name p {
+    font-weight: bold;
+}
+
+/* *************************************************** */
+
+/* --------------------
+contact.html
+-------------------- */
+
+#contact_form {
+    padding: 80px 5% 0;
+}
+
+#contact_form h2 {
+    letter-spacing: 0.1rem;
+}
+
+/* form */
+
+.Form {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: inherit;
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+.Form-Item {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.Form-Item-Label {
+    max-width: inherit;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.05em;
+    width: 100%;
+}
+
+.Form-Item-Input {
+    border: none;
+    border-radius: 10px;
+    margin-left: 0;
+    padding-left: 1em;
+    padding-right: 1em;
+    height: 40px;
+    width: 100%;
+    flex: inherit;
+    background: #F3F3F3;
+}
+
+.Form-Item-Textarea {
+    border: none;
+    border-radius: 10px;
+    margin-left: 0;
+    padding-left: 1em;
+    padding-right: 1em;
+    height: 200px;
+    flex: inherit;
+    width: 100%;
+    background: #F3F3F3;
+}
+
+.Form-Item-Input:focus,
+.Form-Item-Textarea:focus {
+    border: 2px solid #2c2c2c;
+    outline: none;
+}
+
+.Form-Btn {
+    border-radius: 6px;
+    margin-top: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    width: 160px;
+    display: block;
+    letter-spacing: 0.05em;
+    background: #5bc8ac;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+
+/* *************************************************** */
+
+/* --------------------
+thanks.html
+-------------------- */
+#thanks {
+    padding: 100px 5% 0;
+    text-align: center;
+}
+
+#thanks h2 {
+    letter-spacing: 0.1rem;
+}
+
+#thanks p {
+    font-size: 80%;
+}
+
+#thanks .button_container {
+    margin-top: 20%;
+}
+
+
+/* *************************************************** */
+
+/* --------------------
+footer
+-------------------- */
+footer {
+    margin-bottom: 20vh;
+}
+
+hr {
+    width: 90%;
+}
+
+footer p {
+    text-align: center;
+    margin-top: 5%;
+}
