@@ -7,22 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery.min.js"></script>
     <!-- css reset -->
-    <link rel="stylesheet" type="text/css" href="/static/css/modern-css-reset.css">
-    <script src="/static/js/load_contents.js"></script>
+    <link rel="stylesheet" type="text/css" href="./static/css/modern-css-reset.css">
+    <script src="./static/js/load_contents.js"></script>
     <!-- tokimeki-plus head end -->
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="./static/css/style.css">
     <title>Tokimeki+</title>
 </head>
 
 <body ontouchstart="">
     <div id="container">
         <!-- /header.htmlを読み込み -->
-        <header class="load_content" data-load_file="/header.html"></header>
+        <header class="load_content" data-load_file="./header.html"></header>
 
         <main>
             <div id="top">
                 <div style="padding: 20px 20%;">
-                    <img src="/static/img/top.png">
+                    <img src="./static/img/top.png">
                 </div>
                 <div class="top_message">
                     <h2>デジタルの力を通じて、</h2>
@@ -40,7 +40,7 @@
                 <script>
                     $(document).ready(function () {
                         // newsコンテンツを/data/news.jsonから取得して生成
-                        $.getJSON('/data/news.json', function (data) {
+                        $.getJSON('./data/news.json', function (data) {
                             var newsContainer = $('.news');
                             $.each(data.data, function (index, newsItem) {
                                 var newsHtml = `
@@ -90,7 +90,7 @@
 
             <div id="about">
                 <div style="padding: 20px 0;">
-                    <img src="/static/img/aboutus.png">
+                    <img src="./static/img/aboutus.png">
                 </div>
                 <h2>ABOUT US</h2>
                 <div class="about_contents">
@@ -98,13 +98,13 @@
                     <p>スマートフォン向けアプリを中心に、様々なデジタル技術を活用したプロダクトを開発しています。</p>
                 </div>
                 <div class="button_container">
-                    <div class="button_box"><a href="/about" class="btn">私たちについて</a></div>
+                    <div class="button_box"><a href="./about" class="btn">私たちについて</a></div>
                 </div>
             </div>
 
             <div id="product">
                 <h2>PRODUCT</h2>
-                <img src="static/img/sorarin.png" style="padding: 20px 20%;">
+                <img src="./static/img/sorarin.png" style="padding: 20px 20%;">
                 <div class="product_name">
                     <h4>そらりん</h4>
                     <span>2024.06.01 Release</span>
@@ -118,7 +118,7 @@
                     <p>天気と調和した心地よいアラーム音の中から、天気ごとにお好きなアラーム音を設定してください。</p>
                 </div>
                 <div class="button_container">
-                    <div class="button_box"><a href="/sorarin/" class="btn">詳細を見る</a></div>
+                    <div class="button_box"><a href="./sorarin/" class="btn">詳細を見る</a></div>
                 </div>
             </div>
 
@@ -126,7 +126,7 @@
                 <div class="contact_contents">
                     <h2>CONTACT</h2>
                     <div class="button-container">
-                        <div class="contact_btn_box"><a href="/contact" class="contact_btn">お問い合わせはこちらから</a></div>
+                        <div class="contact_btn_box"><a href="./contact" class="contact_btn">お問い合わせはこちらから</a></div>
                     </div>
                     <p>プロダクトについてなど、ときめき+に関するお問合わせは上記リンクよりお願いします。</p>
                 </div>
@@ -137,7 +137,7 @@
 
         </footer>
         <!-- /footer.htmlを読み込み -->
-        <footer class="load_content" data-load_file="/footer.html"></footer>
+        <footer class="load_content" data-load_file="./footer.html"></footer>
     </div>
 </body>
 
