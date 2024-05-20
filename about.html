@@ -11,6 +11,7 @@
     <script src="./static/js/load_contents.js"></script>
     <!-- tokimeki-plus head end -->
     <link rel="stylesheet" href="./static/css/style.css">
+    <script src="./static/js/render_from_template.js"></script>
     <title>About [Tokimeki+]</title>
 </head>
 
@@ -65,42 +66,50 @@
 
             <div id="member">
                 <h2>MEMBER</h2>
-                <div class="member_contents">
-                    <div class="member_content">
-                        <div class="member_img_name">
-                            <img src="./static/img/shinoken.jpg" style="width: 30%; height: 30%;">
-                            <p>しのけん</p>
+                <div class="member_contents render_from_template" data-template_id="member_template"
+                    data-data_source="member_data">
+
+                    <!-- template -->
+                    <div id="member_template" style="display: none;">
+                        <div class="member_content">
+                            <div class="member_img_name">
+                                <img class="tplimg_image" src="" style="width: 30%; height: 30%;"><!-- 'image'キーに対応 -->
+                                <p class="tplval_name"></p><!-- 'name'キーに対応 -->
+                            </div>
+                            <p class="tplval_comment"></p><!-- 'comment'キーに対応 -->
                         </div>
-                        <p>かわいい。毎日かわいい。食べたい。</p>
                     </div>
-                    <div class="member_content">
-                        <div class="member_img_name">
-                            <img src="./static/img/tatsuki.jpg" style="width: 30%; height: 30%;">
-                            <p>たつき</p>
-                        </div>
-                        <p>かわいい。毎日かわいい。食べたい。</p>
-                    </div>
-                    <div class="member_content">
-                        <div class="member_img_name">
-                            <img src="./static/img/ayu.jpg" style="width: 30%; height: 30%;">
-                            <p>あゆ</p>
-                        </div>
-                        <p>かわいい。毎日かわいい。食べたい。</p>
-                    </div>
-                    <div class="member_content">
-                        <div class="member_img_name">
-                            <img src="./static/img/haruka.jpg" style="width: 30%; height: 30%;">
-                            <p>はるか</p>
-                        </div>
-                        <p>かわいい。毎日かわいい。食べたい。</p>
-                    </div>
-                    <div class="member_content">
-                        <div class="member_img_name">
-                            <img src="./static/img/suzurina.jpg" style="width: 30%; height: 30%;">
-                            <p>すずりな</p>
-                        </div>
-                        <p>かわいい。毎日かわいい。食べたい。</p>
-                    </div>
+                    <!-- data source -->
+                    <script>
+                        var member_data = [
+                            {
+                                "name": "しのけん",
+                                "img_image": "./static/img/shinoken.jpg",
+                                "comment": "かわいい。毎日かわいい。食べたい。"
+                            },
+                            {
+                                "name": "たつき",
+                                "img_image": "./static/img/tatsuki.jpg",
+                                "comment": "かわいい。毎日かわいい。食べたい。"
+                            },
+                            {
+                                "name": "あゆ",
+                                "img_image": "./static/img/ayu.jpg",
+                                "comment": "かわいい。毎日かわいい。食べたい。"
+                            },
+                            {
+                                "name": "はるか",
+                                "img_image": "./static/img/haruka.jpg",
+                                "comment": "かわいい。毎日かわいい。食べたい。"
+                            },
+                            {
+                                "name": "すずりな",
+                                "img_image": "./static/img/suzurina.jpg",
+                                "comment": "かわいい。毎日かわいい。食べたい。"
+                            }
+                        ];
+                    </script>
+
                 </div>
             </div>
 
