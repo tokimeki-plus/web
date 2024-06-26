@@ -1,8 +1,8 @@
 <div class="logo">
-    <a href="./"><img src="./static/img/logo.png"></a>
+    <a href="./"><img src="./static/img/logo_square.png"></a>
 </div>
 <div id="hamburger">
-    <div class="icon">
+    <div class="btn-trigger" id="btn02">
         <span></span>
         <span></span>
         <span></span>
@@ -18,14 +18,20 @@
 </nav>
 
 
-<!--jQuery-->
 <script>
-    $('#hamburger').on('click', function () {
+    $(function () {
+        $('.btn-trigger').on('click', function () {
+            $(this).toggleClass('active');
+            return false;
+        });
+    });
+
+    $('.btn-trigger').on('click', function () {
         $('.icon').toggleClass('close');
         $('.sm').slideToggle();
     });
 
-    $('.sm a').on('click', function () {
+    $('.btn-trigger a').on('click', function () {
         $('.icon').removeClass('close');
         $('.sm').slideUp();
     });
