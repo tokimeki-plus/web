@@ -1,8 +1,8 @@
 <div class="logo">
-    <a href="./"><img src="./static/img/logo.png"></a>
+    <a href="./"><img src="./static/img/logo_square.png"></a>
 </div>
 <div id="hamburger">
-    <div class="icon">
+    <div class="btn-trigger" id="btn02">
         <span></span>
         <span></span>
         <span></span>
@@ -18,15 +18,27 @@
 </nav>
 
 
-<!--jQuery-->
 <script>
-    $('#hamburger').on('click', function () {
-        $('.icon').toggleClass('close');
-        $('.sm').slideToggle();
-    });
+    $(function () {
+        // ハンバーガーボタンをクリックしたときの処理
+        $('.btn-trigger').on('click', function () {
+            $(this).toggleClass('active');
+            $('.sm').slideToggle();
+            return false;
+        });
 
-    $('.sm a').on('click', function () {
-        $('.icon').removeClass('close');
-        $('.sm').slideUp();
+        // メニュー内のリンクをクリックしたときの処理
+        $('.sm a').on('click', function () {
+            $('.btn-trigger').removeClass('active');
+            $('.sm').slideUp();
+        });
+
+        // ページをスクロールしたときの処理
+        $(window).on('scroll', function () {
+            if ($('.sm').is(':visible')) {
+                $('.btn-trigger').removeClass('active');
+                $('.sm').slideUp();
+            }
+        });
     });
 </script>
