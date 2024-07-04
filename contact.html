@@ -66,7 +66,7 @@
                         }
 
                         // E-mailの形式チェック
-                        if (email === '' || !emailRegex.test(email)) {
+                        if (email !== '' && !emailRegex.test(email)) {
                             alert('正しい形式のE-mailアドレスを入力してください。');
                             return;
                         }
@@ -80,7 +80,7 @@
                             // iframe の中身を削除
                             iframe.parentNode.removeChild(iframe);
                             // /thanks に移行
-                            window.location.href = '/thanks';
+                            window.location.href = './thanks';
                         };
                     }
                 </script>
