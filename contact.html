@@ -42,8 +42,6 @@
                             <textarea id="message_input" name="entry.553185664" class="Form-Item-Textarea"
                                 style="resize: none;" required></textarea>
                         </div>
-                        <p><span style="color: red;">*必須の項目です</span></p>
-
                         <div class="button_container">
                             <div class="button_box"><a href="javascript:void(0);" onclick="validateAndSubmit()"
                                     class="btn submit-btn">送信する</a></div>
@@ -62,13 +60,8 @@
                         var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
                         // 必須項目のチェック
-<<<<<<< HEAD
                         if (name === '' || message === '') {
                             alert('お名前、お問い合わせ内容は必須です。');
-=======
-                        if (name === '' || email === '' || message === '') {
-                            alert('お名前、E-mail、お問い合わせ内容は必須です。');
->>>>>>> 92d9efe92db325605cce6857d2525c6046a69bf7
                             return;
                         }
 
@@ -87,11 +80,7 @@
                             // iframe の中身を削除
                             iframe.parentNode.removeChild(iframe);
                             // /thanks に移行
-<<<<<<< HEAD
                             window.location.href = '/thanks';
-=======
-                            window.location.href = './thanks';
->>>>>>> 92d9efe92db325605cce6857d2525c6046a69bf7
                         };
                     }
                 </script>
